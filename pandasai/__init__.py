@@ -373,7 +373,7 @@ class PandasAI(Shortcuts):
         self._start_time = time.time()
 
         self.log(f"Question: {prompt}")
-        self.log(f"Running PandasAI with {self._llm.type} LLM...")
+        self.log(f"Running forked PandasAI with {self._llm.type} LLM...")
 
         self._prompt_id = str(uuid.uuid4())
         self.log(f"Prompt ID: {self._prompt_id}")
@@ -589,6 +589,9 @@ class PandasAI(Shortcuts):
             isinstance(node, ast.Assign)
             and isinstance(node.targets[0], ast.Name)
             and re.match(r"df\d{0,2}$", node.targets[0].id)
+            and not isinstance(node.value, ast.Subscript)
+            # and node.value.func.value.id != 'df'
+
         )
 
     def _is_jailbreak(self, node: ast.stmt) -> bool:
