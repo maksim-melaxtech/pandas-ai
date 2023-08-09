@@ -588,8 +588,10 @@ class PandasAI(Shortcuts):
         return (
             isinstance(node, ast.Assign)
             and isinstance(node.targets[0], ast.Name)
-            and re.match(r"df\d{0,2}$", node.targets[0].id)
-            and not isinstance(node.value, ast.Subscript)
+            and (re.match(r"(df\d{0,2}|data)", node.targets[0].id)
+                 and isinstance(node.value, ast.Call)
+                 and re.match(r"read_(.*)", node.value.func.attr))
+
             # and node.value.func.value.id != 'df'
 
         )
