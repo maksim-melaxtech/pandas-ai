@@ -21,23 +21,16 @@ specialty: Medical specialty or field of practice.
 physician_email: Email address of the physician.
 physician_phone: Phone number of the physician.
 physician_degrees: Academic degrees held by the physician.
-physician_disease_tiers: Disease tiers specialized by the physician.
 state_full_name: Full name of the state where the physician practices.
 physician_primary_practice_address: Primary practice address of the physician.
 physician_zip3: Zip code prefix of the physician's practice location.
-primary_organization_affiliation: Main healthcare organization the physician is affiliated with.
-organization_type: Type of healthcare organization.
-organization_classification: Classification of the healthcare organization.
-num_pt: Total number of patients associated with the physician.
-num_pt_Other: Number of patients of other or unspecified racial backgrounds.
-num_pt_White: Number of patients identified as White.
-num_pt_Black: Number of patients identified as Black.
-num_pt_Asian: Number of patients identified as Asian.
-num_pt_Race_Unknown: Number of patients with unknown racial information.
-num_pt_Race_Non_White: Number of patients belonging to non-White racial groups.
-num_pt_Hispanic: Number of patients identified as Hispanic.
-num_pt_Not_Hispanic: Number of patients not identified as Hispanic.
-num_pt_Ethnicity_Unknown: Number of patients with unknown ethnicity information.
+primary_hco_affiliation: Main healthcare organization the physician is affiliated with.
+Org_Type: Type of healthcare organization.
+Classification: Classification of the healthcare organization.
+test_pt: Number of children with lipid testing seen by this physician
+untest_pt: Number of children without lipid testing seen by this physician
+total_pt: Total number of children seen by this physician
+unscreen_rate: Percent not receiving lipid testing seen by this physician. 
 num_trials_total: Total number of clinical trials associated with the physician.
 num_trials_ongoing: Number of ongoing clinical trials associated with the physician.
 num_trials_past: Number of completed or past clinical trials associated with the physician.
@@ -46,16 +39,11 @@ num_pub_last5yr: Number of publications in the last five years associated with t
 physician_pubmed_url: URL to the physician's profile or publications on PubMed.
 
 These are column descriptions for df2. Use this dataframe if asked about unique patients:
-physician_zip3: Zip code prefix of a physician's practice location.
-num_pt_zip3: Total number of unique patients associated with the zip code prefix.
-num_pt_Asian_zip3: Count of unique patients with Asian racial background in the zip code prefix.
-num_pt_Black_zip3: Count of unique patients with Black racial background in the zip code prefix.
-num_pt_Other_zip3: Count of unique patients with other or unspecified racial backgrounds in the zip code prefix.
-num_pt_White_zip3: Count of unique patients identified as White in the zip code prefix.
-num_pt_Race_Unknown_zip3: Count of unique patients with unknown racial information in the zip code prefix.
-num_pt_Hispanic_zip3: Count of unique patients identified as Hispanic in the zip code prefix.
-num_pt_Not_Hispanic_zip3: Count of unique patients not identified as Hispanic in the zip code prefix.
-num_pt_Ethnicity_Unknown_zip3: Count of unique patients with unknown ethnicity information in the zip code prefix.
+ZIP3: Zip code prefix of a physician's practice location.
+test_pt_zip3: Number of unique children patients with lipid testing in the zip code prefix.
+total_pt_zip3: Number of unique total children patients in the zip code prefix.
+untest_pt_zip3: Number of unique children patients without lipid testing in the zip code prefix.
+unscreen_rate_zip3: Percent of patients not receiving lipid testing in the zip code prefix.
 
 When asked about the data, your response should include a python code that describes the dataframes provided.
 Using the provided dataframes and no other dataframes, return the python code and make sure to prefix the requested 
