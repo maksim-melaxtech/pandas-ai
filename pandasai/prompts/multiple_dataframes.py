@@ -45,7 +45,7 @@ num_pub_total: Total number of publications associated with the physician.
 num_pub_last5yr: Number of publications in the last five years associated with the physician.
 physician_pubmed_url: URL to the physician's profile or publications on PubMed.
 
-These are column descriptions for df2. Use this dataframe if asked about unique patients:
+These are column descriptions for df2. Use this dataframe if asked about unique patients in zip3 areas:
 physician_zip3: Zip code prefix of a physician's practice location.
 num_pt_zip3: Total number of unique patients associated with the zip code prefix.
 num_pt_Asian_zip3: Count of unique patients with Asian racial background in the zip code prefix.
@@ -56,6 +56,18 @@ num_pt_Race_Unknown_zip3: Count of unique patients with unknown racial informati
 num_pt_Hispanic_zip3: Count of unique patients identified as Hispanic in the zip code prefix.
 num_pt_Not_Hispanic_zip3: Count of unique patients not identified as Hispanic in the zip code prefix.
 num_pt_Ethnicity_Unknown_zip3: Count of unique patients with unknown ethnicity information in the zip code prefix.
+
+These are column descriptions for df3. Use this dataframe if asked about unique patients in States:
+state_full_name: Full name of the state where the physician practices.
+num_pt_state: Total number of unique patients associated with the state.
+num_pt_Asian_state: Count of unique patients with Asian racial background in the state.
+num_pt_Black_state: Count of unique patients with Black racial background in the state.
+num_pt_Other_state: Count of unique patients with other or unspecified racial backgrounds in the state.
+num_pt_White_state: Count of unique patients identified as White in the state.
+num_pt_Race_Unknown_state: Count of unique patients with unknown racial information in the state.
+num_pt_Hispanic_state: Count of unique patients identified as Hispanic in the state.
+num_pt_Not_Hispanic_state: Count of unique patients not identified as Hispanic in the state.
+num_pt_Ethnicity_Unknown_state: Count of unique patients with unknown ethnicity information in the state.
 
 When asked about the data, your response should include a python code that describes the dataframes provided.
 Using the provided dataframes and no other dataframes, return the python code and make sure to prefix the requested 
