@@ -25,9 +25,9 @@ physician_disease_tiers: Disease tiers specialized by the physician.
 state_full_name: Full name of the state where the physician practices.
 physician_primary_practice_address: Primary practice address of the physician.
 physician_zip3: Zip code prefix of the physician's practice location.
-primary_organization_affiliation: Main healthcare organization the physician is affiliated with.
-organization_type: Type of healthcare organization.
-organization_classification: Classification of the healthcare organization.
+Primary_Hco_Affiliation: Main healthcare organization the physician is affiliated with.
+Org_Type: Type of healthcare organization.
+Classification: Classification of the healthcare organization.
 num_pt: Total number of patients associated with the physician.
 num_pt_Other: Number of patients of other or unspecified racial backgrounds.
 num_pt_White: Number of patients identified as White.
