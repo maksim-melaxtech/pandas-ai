@@ -34,7 +34,7 @@ from ..helpers.df_config import Config, load_config
 from ..prompts.base import Prompt
 from ..prompts.correct_error_prompt import CorrectErrorPrompt
 from ..prompts.generate_python_code import GeneratePythonCodePrompt
-from typing import Union, List, Any, Type, Optional
+from typing import Union, List, Any, Type, Optional, Dict
 from ..helpers.code_manager import CodeManager
 from ..middlewares.base import Middleware
 from ..helpers.df_info import DataFrameType, polars_imported
@@ -42,7 +42,7 @@ from ..helpers.path import find_project_root
 
 
 class SmartDatalake:
-    _dfs: List[DataFrameType]
+    _dfs: List[Dict]
     _config: Config
     _llm: LLM
     _cache: Cache = None
@@ -58,14 +58,14 @@ class SmartDatalake:
 
     def __init__(
         self,
-        dfs: List[Union[DataFrameType, Any]],
+        dfs: List[Dict],
         config: Config = None,
         logger: Logger = None,
         memory: Memory = None,
     ):
         """
         Args:
-            dfs (List[Union[DataFrameType, Any]]): List of dataframes to be used
+            dfs (List[Dict]): List of dataframes with descriptions to be used. {"dataframe": dataframe, "description": ""}
             config (Config, optional): Config to be used. Defaults to None.
             logger (Logger, optional): Logger to be used. Defaults to None.
         """
@@ -114,21 +114,22 @@ class SmartDatalake:
             cache_dir = os.path.join(os.getcwd(), "cache")
         os.makedirs(cache_dir, mode=0o777, exist_ok=True)
 
-    def _load_dfs(self, dfs: List[Union[DataFrameType, Any]]):
+    def _load_dfs(self, dfs: List[Dict]):
         """
         Load all the dataframes to be used in the smart datalake.
 
         Args:
-            dfs (List[Union[DataFrameType, Any]]): List of dataframes to be used
+            dfs (List[Dict]): List of dataframes to be used
         """
 
         from ..smart_dataframe import SmartDataframe
 
         smart_dfs = []
         for df in dfs:
-            if not isinstance(df, SmartDataframe):
+            if not isinstance(df['dataframe'], SmartDataframe):
                 smart_dfs.append(
-                    SmartDataframe(df, config=self._config, logger=self._logger)
+                    SmartDataframe(df, description=df['description'] if 'description' in df else None,
+                                   config=self._config, logger=self._logger)
                 )
             else:
                 smart_dfs.append(df)
