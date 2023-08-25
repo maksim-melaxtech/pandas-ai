@@ -36,7 +36,7 @@ num_trials_ongoing: Number of ongoing clinical trials associated with the physic
 num_trials_past: Number of completed or past clinical trials associated with the physician.
 num_pub_total: Total number of publications associated with the physician.
 num_pub_last5yr: Number of publications in the last five years associated with the physician.
-physician_pubmed_url: URL to the physician's profile or publications on PubMed.
+physician_trialtrove_url: URL to the physician's profile on TrialTrove.
 
 These are column descriptions for df2. Use this dataframe if asked about unique patients:
 ZIP3: Zip code prefix of a physician's practice location.
