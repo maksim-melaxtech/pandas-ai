@@ -24,7 +24,7 @@ physician_degrees: Academic degrees held by the physician.
 state_full_name: Full name of the state where the physician practices.
 physician_primary_practice_address: Primary practice address of the physician.
 physician_zip3: Zip code prefix of the physician's practice location.
-primary_hco_affiliation: Main healthcare organization the physician is affiliated with.
+Primary_Hco_Affiliation: Main healthcare organization the physician is affiliated with.
 Org_Type: Type of healthcare organization.
 Classification: Classification of the healthcare organization.
 test_pt: Number of children with lipid testing seen by this physician
